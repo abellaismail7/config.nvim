@@ -23,6 +23,7 @@ local servers = {
   prismals = {},
   tailwindcss = {},
   eslint = {},
+  taplo = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

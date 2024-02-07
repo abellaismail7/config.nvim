@@ -91,6 +91,8 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      local palette = require 'nordic.colors'
+
       require('nordic').setup {
         override = {
           BqfPreviewBorder = { fg = '#ffffff' },
@@ -98,6 +100,7 @@ return {
           EdgyTitle = { link = 'NeoTreeNormal' },
           EdgyIcon = { link = 'NeoTreeNormal' },
           EdgyIconActive = { link = 'NeoTreeNormal' },
+          PmenuSel = { fg = palette.gray0, bg = palette.yellow.dim },
         },
         telescope = {
           style = 'classic',
