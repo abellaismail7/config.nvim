@@ -87,6 +87,17 @@ return {
     opts = require 'config.edgy',
   },
   {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = function()
+      require 'config.lsp.flutter'
+    end,
+  },
+  {
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,

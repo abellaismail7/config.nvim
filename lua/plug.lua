@@ -20,16 +20,29 @@ require('lazy').setup({
           require 'config.lsp.rust'
         end, ]]
       },
-      {
+      --[[ {
         'jose-elias-alvarez/typescript.nvim',
-        --[[ config = function()
+        config = function()
           require 'config.lsp.ts'
-        end, ]]
-      },
-      {
+        end,
+      }, ]]
+      --[[ {
         'jose-elias-alvarez/null-ls.nvim',
         config = function()
           require 'config.null-ls'
+        end,
+      }, ]]
+      {
+        'pmizio/typescript-tools.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+        config = function()
+          require('config.lsp.ts').setup()
+        end,
+      },
+      {
+        'stevearc/conform.nvim',
+        config = function()
+          require 'config.conform'
         end,
       },
 

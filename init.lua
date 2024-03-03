@@ -48,7 +48,6 @@ require('keymaps').telescope()
 pcall(require('telescope').load_extension, 'fzf')
 require 'config.mason'
 require 'config.lsp.rust'
-require 'config.lsp.ts'
 require 'config.treesitter'
 require 'cmd'
 -- The line beneath this is called `modeline`. See `:help modeline`
