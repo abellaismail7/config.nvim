@@ -15,10 +15,9 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
       { 'williamboman/mason.nvim', config = true, requires = { 'nvim-lua/lsp-status.nvim' } },
       {
-        'simrat39/rust-tools.nvim',
-        --[[ config = function()
-          require 'config.lsp.rust'
-        end, ]]
+        'mrcjkb/rustaceanvim',
+        version = '^4', -- Recommended
+        ft = { 'rust' },
       },
       --[[ {
         'jose-elias-alvarez/typescript.nvim',
@@ -42,7 +41,7 @@ require('lazy').setup({
       {
         'stevearc/conform.nvim',
         config = function()
-          require 'config.conform'
+          require('config.conform').setup()
         end,
       },
 
@@ -117,7 +116,13 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    config = function()
+      require('config.comment').setup()
+    end,
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' }, opts = require 'config.telescope' },

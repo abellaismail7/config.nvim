@@ -63,12 +63,11 @@ end
 
 function M.setup()
   require('typescript-tools').setup {
-    server = {
-      on_attach = function()
-        require('keymaps').lsp()
-        attach()
-      end,
-    },
+    on_attach = function()
+      print 'on_attach'
+      require('keymaps').lsp()
+      attach()
+    end,
   }
 end
 
